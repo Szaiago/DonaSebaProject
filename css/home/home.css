@@ -1,0 +1,40 @@
+:root {
+    --colorPrin: rgb(81, 61, 51);
+    --colorHover: rgb(56, 33, 22);
+}
+
+.infos-adicionais {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-wrap: wrap;
+}
+.infos-adicionais p {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--colorHover);
+}
+.info-envio, .info-pagamento, .info-segurança {
+    margin: 15px;
+    width: 15vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icones-adicionais {
+    cursor: pointer;
+    font-size: 10vw;
+    text-shadow: 0 0 5px solid var(--colorHover);
+    transition: 1s;
+    color: var(--colorPrin);
+}
+.icones-adicionais:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    color: var(--colorHover);
+}
