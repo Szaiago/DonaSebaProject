@@ -86,6 +86,14 @@ header {
     display: inline-block;
 }
 
+.dropdown-content, .dropdown-content-ajuda {
+    display: none;
+}
+
+.dropdown-content.show, .dropdown-content-ajuda.show {
+    display: block;
+} 
+
 .dropdown-content {
     display: none;
     position: absolute;
