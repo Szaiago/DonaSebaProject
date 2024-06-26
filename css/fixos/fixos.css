@@ -174,7 +174,7 @@ header {
 }
 .icone-whats {
     cursor: pointer;
-    margin-right: 15px;
+    margin-right: 40px;
     font-size: 300%;
     transition: 1s;
     color: var(--colorPrin);
