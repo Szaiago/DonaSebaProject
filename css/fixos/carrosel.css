@@ -3,7 +3,6 @@
     width: 100vw;
     height: 80vh;
     overflow: hidden;
-    box-shadow: 0 0 15px black;
 }
 .slide {
     position: absolute;

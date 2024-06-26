@@ -21,6 +21,30 @@ header {
     width: 100vw;
     height: 3vh;
     background-color: var(--colorPrin);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.detalhe-main-horizontal span {
+    display: inline-block;
+    padding-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    animation: marquee 5s linear infinite;
+}
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 .main-horizontal {
     width: 100vw;
@@ -39,39 +63,8 @@ header {
     flex-direction: row;
     align-items: center;
 }
-.logo-empresa{
-    width: 33.3333333333vw;
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.logo {
-    border-image: 2px solid black;
-    width: 12vw;
-}
-.whatsapp {
-    width: 33.3333333333vw;
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-}
-.icone-whats {
-    cursor: pointer;
-    margin-right: 15px;
-    font-size: 3vw;
-    transition: 1s;
-    color: var(--colorPrin);
-}
-.icone-whats:hover {
-    transition: 1s;
-    transform: scale(1.1);
-    color: var(--colorHover);
-}
 .dropdown {
+    font-size: 40px;
     margin-left: 15px;
     position: relative;
     display: inline-block;
@@ -81,15 +74,15 @@ header {
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+    min-width: 250px;
+    box-shadow:  0 0 15px rgba(0, 0, 0, 0.747);
     z-index: 1;
 }
 
 .dropdown-content a {
     color: rgb(81, 61, 51);
     padding: 12px 16px;
-    font-size: 15px;
+    font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     display: block;
@@ -115,6 +108,80 @@ header {
     background-color: rgb(81, 61, 51);
     margin: 4px 0;
     transition: 0.4s;
+}
+.logo-empresa{
+    width: 33.3333333333vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.logo {
+    border-image: 2px solid black;
+    width: 50%;
+}
+.whatsapp {
+    width: 33.3333333333vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.icone-ajuda {
+    margin-top: 15px;
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 130%;
+    color: var(--colorPrin);
+}
+.dropdown-ajuda {
+    font-size: 40px;
+    margin-left: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-ajuda {
+    display: none;
+    position: absolute;
+    background-color: white;
+    margin-left: -30vw;
+    min-width: 250px;
+    box-shadow:  0 0 15px rgba(0, 0, 0, 0.747);
+    z-index: 1;
+}
+
+.dropdown-content-ajuda a {
+    color: rgb(81, 61, 51);
+    padding: 12px 16px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-ajuda a:hover {
+    background-color: rgb(81, 61, 51);
+    color: white;
+}
+
+.dropdown-ajuda:hover .dropdown-content-ajuda {
+    display: block;
+}
+.icone-whats {
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 300%;
+    transition: 1s;
+    color: var(--colorPrin);
+}
+.icone-whats:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    color: var(--colorHover);
 }
 main {
     width: 100vw;

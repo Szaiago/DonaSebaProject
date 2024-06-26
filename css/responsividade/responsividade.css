@@ -1,0 +1,30 @@
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 100%;
+    }
+    .icone-ajuda {
+        font-size: 80%;
+        color: var(--colorPrin);
+    }
+    .icone-whats {
+        margin-right: 15px;
+        font-size: 200%;
+        transition: 1s;
+        color: var(--colorPrin);
+    }
+    .carrosel-imagens {
+        height: 30vh;
+    }
+  }
+  
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .carrosel-imagens {
+        height: 50vh;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+
+  }
+  @media only screen and (min-width: 1441px) {
+  }
