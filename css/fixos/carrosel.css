@@ -1,0 +1,47 @@
+.carrosel-imagens {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 0 15px black;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: white;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+.slide:nth-child(1) { 
+    background-image: url(../img-empresa/slidebemvindo.gif);
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(2) { 
+    background-image: url(../img-empresa/slideconheçanos.gif);
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(3) { 
+    background-image: url(../img-empresa/slidecatalago.gif);
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(4) {
+    background-image: url(../img-empresa/slidelocal.gif);
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(5) { 
+    background-image: url(../img-empresa/slidecontateme.gif);
+    background-size: cover;
+    background-position: center;
+}
+.active {
+    opacity: 1;
+}
