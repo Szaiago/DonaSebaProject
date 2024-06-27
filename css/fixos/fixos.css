@@ -134,6 +134,9 @@ header {
     margin: 4px 0;
     transition: 0.4s;
 }
+.sub-menu {
+    display: none;
+}
 .organizar-categorias {
     display: flex;
     flex-direction: row;
