@@ -134,6 +134,19 @@ header {
     margin: 4px 0;
     transition: 0.4s;
 }
+.categorias-produtos {
+    cursor: pointer;
+    width: 6VW;
+    height: 4vh;
+    border: none;
+    background-color: var(--colorPrin);
+    color: white;
+    transition: 1S;
+}
+.categorias-produtos:hover {
+    transition: 1S;
+    background-color: var(--colorHover);
+}
 .logo-empresa{
     width: 33.3333333333vw;
     height: 10vh;
