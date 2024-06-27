@@ -1,43 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Bolos</title>
+    <title>Dona Seba</title>
     <meta charset="utf-8">
+    <meta name="author" content="Iago Souza">
+    <meta name="publisher" content="Iago Souza" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="Confeiteira de Santa Catarina">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/fixos/fixos.css"/>
+    <link rel="stylesheet" href="../css/fixos/pesquisa.css">
     <link rel="stylesheet" href="../css/home/home.css">
+    <link rel="stylesheet" href="../css/responsividade/responsividade.css"/>
+    <link rel="shortcut icon" type="image/png" href="../css/img-empresa/logo.png"/>
+    <script src="../js/dropdown.js" defer></script>
+    <script src="../js/hoverfooter.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
     <header>
-        <h1>Bolos</h1>
+        <div class="detalhe-main-horizontal">
+            <span>ENTREGAS PARA JOINVILLE E REGIÃO</span>
+            <span>ENTREGAS PARA JOINVILLE E REGIÃO</span>
+            <span>ENTREGAS PARA JOINVILLE E REGIÃO</span>
+            <span>ENTREGAS PARA JOINVILLE E REGIÃO</span>
+            <span>ENTREGAS PARA JOINVILLE E REGIÃO</span>
+        </div>
+        <div class="main-horizontal">
+            <div class="input-main-horizontal">
+                <div class="dropdown">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="../index.html">Menu</a>
+                        <a href="#voce-pode-gostar">Você pode gostar</a>
+                        <a href="#contato">Contato</a>
+                        <a href="#sobre-nos">Sobre nós</a>
+                    </div>
+                </div>
+                <div class="input-main-horizontal" style="margin-left: 10px;">
+                    <div class="organizar-categorias">
+                        <a href="docinhos.html"><button class="categorias-produtos-docinhos">DOCINHOS</button></a>
+                        <a href="salgadinhos.html"><button class="categorias-produtos-salgadinhos">SALGADINHOS</button></a>
+                        <a href="bolos.html"><button class="categorias-produtos-bolos">BOLOS</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-empresa">
+                <img src="../css/img-empresa/logo.png" class="logo" alt="Logo Dona Seba">
+            </div>
+            <div class="whatsapp">
+                <div class="dropdown-ajuda">
+                    <ion-icon name="help-outline" class="icone-ajuda"></ion-icon>
+                    <div class="dropdown-content-ajuda">
+                        <a href="#">Este site é apenas para demonstração de catálago, pedidos devem ser feitos via whatsapp.</a>
+                    </div>
+                </div>
+                <ion-icon name="logo-whatsapp" class="icone-whats"></ion-icon>
+            </div>
+        </div>
     </header>
-    <main id="result-container">
-        <!-- Produtos encontrados serão exibidos aqui -->
+    <main>
+        <div class="titulo-pesquisa">
+            <p>BOLOS:</p>
+        </div>
+        <div class="produtos-container">
+            <div class="card-produtos" id="bolos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/bolo-dois-amores.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BOLO DOIS AMORES</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="bolos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/bolo-prestigio.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BOLO PRESTÍGIO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+        </div>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const results = JSON.parse(localStorage.getItem('searchResults'));
-            const resultContainer = document.getElementById('result-container');
-
-            if (results && results.length > 0) {
-                results.forEach(result => {
-                    const productCard = document.createElement('div');
-                    productCard.classList.add('card-produtos');
-
-                    productCard.innerHTML = `
-                        <div class="img-produto" style="background-image: ${result.image}; background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                        <div class="info-produto">
-                            <h1>${result.name}</h1>
-                            <p>${result.description}</p>
-                        </div>
-                    `;
-
-                    resultContainer.appendChild(productCard);
-                });
-            } else {
-                resultContainer.innerHTML = '<p>Nenhum produto encontrado.</p>';
-            }
-        });
-    </script>
+    <footer>
+        <div class="ajuda-footer">
+            <a href="#" style="text-decoration: none; color: white; font-family: Arial, Helvetica, sans-serif;">
+                <p>AJUDA</p>
+            </a>
+        </div>
+        <div class="copyright-footer">
+            <p>© Copyright Dona Seba, Todos seus direitos reservados</p>
+        </div>
+        <div class="rede-sociais-footer" tabindex="0">
+            <p class="social-text">REDES SOCIAIS</p>
+            <div class="social-links" style="display: none;">
+                <a href="https://wa.me/yourwhatsapplink" target="_blank" style="color: white;"><ion-icon name="logo-whatsapp" class="redes-sociais-icons"></ion-icon></a>
+                <a href="https://instagram.com/yourinstagramlink" target="_blank" style="color: white;"><ion-icon name="logo-instagram" class="redes-sociais-icons"></ion-icon></a>
+                <a href="https://facebook.com/yourfacebooklink" target="_blank" style="color: white;"><ion-icon name="logo-facebook" class="redes-sociais-icons"></ion-icon></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

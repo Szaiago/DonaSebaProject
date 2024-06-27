@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="../css/home/home.css">
     <link rel="stylesheet" href="../css/responsividade/responsividade.css"/>
     <link rel="shortcut icon" type="image/png" href="../css/img-empresa/logo.png"/>
-    <script src="../js/procuracategoria.js" defer></script>
-    <script src="../js/resultado.js" defer></script>
     <script src="../js/dropdown.js" defer></script>
     <script src="../js/hoverfooter.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -44,9 +42,11 @@
                     </div>
                 </div>
                 <div class="input-main-horizontal" style="margin-left: 10px;">
-                    <button onclick="filterProducts('docinhos')" class="categorias-produtos" style="border-radius: 20px 0 0 20px;">DOCINHOS</button>
-                    <button onclick="filterProducts('salgadinhos')" class="categorias-produtos">SALGADINHOS</button>
-                    <button onclick="filterProducts('bolos')" class="categorias-produtos" style="border-radius: 0 20px 20px 0;">BOLOS</button>
+                    <div class="organizar-categorias">
+                        <a href="docinhos.html"><button class="categorias-produtos-docinhos">DOCINHOS</button></a>
+                        <a href="salgadinhos.html"><button class="categorias-produtos-salgadinhos">SALGADINHOS</button></a>
+                        <a href="bolos.html"><button class="categorias-produtos-bolos">BOLOS</button></a>
+                    </div>
                 </div>
             </div>
             <div class="logo-empresa">
@@ -63,10 +63,76 @@
             </div>
         </div>
     </header>
+<main>
     <div class="titulo-pesquisa">
         <p>DOCINHOS:</p>
     </div>
-    <main id="result-container">
+        <div class="produtos-container">
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/combo-beijinho-brigadeiro.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>COMBO BEIJINHO E BRIGADEIRO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/doces-confete.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>DOCINHOS CONFETE</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-ferreiro.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO FERREIRO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-churros.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO CHURROS</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-kitkat.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO KITKAT</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-leite-ninho-nutella.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO LEITE NINHO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/beijinho.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BEIJINHO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-kinder-bueno.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO KINDER BUENO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="ajuda-footer">

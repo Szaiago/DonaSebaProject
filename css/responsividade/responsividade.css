@@ -2,6 +2,33 @@
     .logo {
         width: 100%;
     }
+    .dropdown {
+        font-size: 40px;
+        margin-left: 20px;
+        position: relative;
+        display: inline-block;
+    }
+    .organizar-categorias {
+        display: flex;
+        flex-direction: column;
+    }
+    .categorias-produtos-docinhos {
+        width: 60px;
+        height: 3.3vh;
+        border-radius: 0;
+        font-size: 6px;
+    }
+    .categorias-produtos-bolos {
+        width: 60px;
+        height: 3.3vh;
+        border-radius: 0;
+        font-size: 6px;
+    }
+    .categorias-produtos-salgadinhos {
+        width: 60px;
+        height: 3.3vh;
+        font-size: 6px;
+    }
     .icone-ajuda {
         font-size: 80%;
         color: var(--colorPrin);

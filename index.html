@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/fixos/carrosel.css"/>
     <link rel="stylesheet" href="css/responsividade/responsividade.css"/>
     <link rel="shortcut icon" type="image/png" href="css/img-empresa/logo.png"/>
-    <script src="js/procuracategoria.js" defer></script>
     <script src="js/carrosel.js" defer></script>
     <script src="js/dropdown.js" defer></script>
     <script src="js/hoverfooter.js" defer></script>
@@ -44,9 +43,11 @@
                     </div>
                 </div>
                 <div class="input-main-horizontal" style="margin-left: 10px;">
-                    <button onclick="filterProducts('docinhos')" class="categorias-produtos" style="border-radius: 20px 0 0 20px;">DOCINHOS</button>
-                    <button onclick="filterProducts('salgadinhos')" class="categorias-produtos">SALGADINHOS</button>
-                    <button onclick="filterProducts('bolos')" class="categorias-produtos" style="border-radius: 0 20px 20px 0;">BOLOS</button>
+                    <div class="organizar-categorias">
+                        <a href="paginas/docinhos.html"><button class="categorias-produtos-docinhos">DOCINHOS</button></a>
+                        <a href="paginas/salgadinhos.html"><button class="categorias-produtos-salgadinhos">SALGADINHOS</button></a>
+                        <a href="paginas/bolos.html"><button class="categorias-produtos-bolos">BOLOS</button></a>
+                    </div>
                 </div>
             </div>
             <div class="logo-empresa">
