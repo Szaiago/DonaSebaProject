@@ -86,6 +86,23 @@
     .redes-sociais-icons {
         font-size: 200%;
     }
+    footer {
+        height: 15vh;
+    }
+    .ajuda-footer, .copyright-footer, .rede-sociais-footer {
+        height: 15vh;
+    }
+    .ajuda-footer, .copyright-footer, .rede-sociais-footer p {
+        font-size: 10px;
+    }
+    .rede-sociais-footer {
+        display: flex;
+        flex-direction: column;
+    }
+    .redes-sociais-icons {
+        font-size: 100%;
+        margin: 5px;
+    }
   }
   
   @media only screen and (min-width: 601px) and (max-width: 1024px) {

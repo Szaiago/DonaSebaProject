@@ -245,7 +245,7 @@ main {
 }
 footer {
     width: 100vw;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -254,7 +254,7 @@ footer {
 }
 .ajuda-footer, .copyright-footer, .rede-sociais-footer {
     width: 33.3333333333vw;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
