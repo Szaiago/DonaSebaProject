@@ -32,6 +32,13 @@
     .dropdown-content-rede-sociais a {
         font-size: 15px;
     }
+    .rede-sociais-footer .social-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .redes-sociais-icons {
+        font-size: 200%;
+    }
   }
   
   @media only screen and (min-width: 601px) and (max-width: 1024px) {

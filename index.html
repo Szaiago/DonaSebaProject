@@ -15,8 +15,9 @@
     <link rel="shortcut icon" type="image/png" href="css/img-empresa/logo.png"/>
     <script src="js/carrosel.js" defer></script>
     <script src="js/dropdown.js" defer></script>
-    <script src="js/droptop.js" defer></script>
+    <script src="js/hoverfooter.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/rede-sociais.js" defer></script>
 </head>
 <body>
     <header>
@@ -148,7 +149,7 @@
             <div class="card-produtos">
                 <div class="img-produto" style="background-image: url(css/img-produtos/brigadeiro-leite-ninho-nutella.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
                 <div class="info-produto">
-                    <h1>BRIGADEIRO LEITE NINHO</h1>
+                    <h1>BRIGADEIRO LEITE NINHO COM NUTELLA</h1>
                     <p>Veja mais sobre este produto em:</p>
                     <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
@@ -188,14 +189,12 @@
         <div class="copyright-footer">
             <p>© Copyright Dona Seba, Todos seus direitos reservados</p>
         </div>
-        <div class="rede-sociais-footer">
-            <p style="cursor: pointer;">REDES SOCIAIS</p>
-            <div class="dropdown-rede-sociais">
-                <div class="dropdown-content-rede-sociais">
-                    <a href="https://wa.me/yourwhatsapplink" target="_blank">WhatsApp</a>
-                    <a href="https://instagram.com/yourinstagramlink" target="_blank">Instagram</a>
-                    <a href="https://facebook.com/yourfacebooklink" target="_blank">Facebook</a>
-                </div>
+        <div class="rede-sociais-footer" tabindex="0">
+            <p class="social-text">REDES SOCIAIS</p>
+            <div class="social-links" style="display: none;">
+                <a href="https://wa.me/yourwhatsapplink" target="_blank" style="color: white;"><ion-icon name="logo-whatsapp" class="redes-sociais-icons"></ion-icon></a>
+                <a href="https://instagram.com/yourinstagramlink" target="_blank" style="color: white;"><ion-icon name="logo-instagram" class="redes-sociais-icons"></ion-icon></a>
+                <a href="https://facebook.com/yourfacebooklink" target="_blank" style="color: white;"><ion-icon name="logo-facebook" class="redes-sociais-icons"></ion-icon></a>
             </div>
         </div>
     </footer>
