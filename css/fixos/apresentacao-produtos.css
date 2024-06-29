@@ -41,7 +41,8 @@ main {
 }
 .foto-produto {
     width: 60vw;
-    height: 75vh;
+    height: auto;
+    min-height: 75vh;
 }
 .titulo-produto {
     margin-top: 20px;
@@ -52,7 +53,6 @@ main {
     flex-direction: row;
     justify-content: left;
     align-items: flex-start;
-    border-bottom: 1px solid var(--colorPrin);
     display: flex;
     flex-direction: column;
 }
@@ -66,6 +66,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: left;
+    width: 32vw;
+    border-bottom: 1px solid var(--colorPrin);
 }
 .preco-produto p{
     font-size: 15px;
@@ -86,4 +88,69 @@ main {
     flex-direction: row;
     align-items: center;
     text-align: left;
+}
+.formas-de-pagamento, .meio-de-envio {
+    margin-top: 10px;
+    width: 30.5vw;
+    height: auto;
+    background-color: white;
+    color: rgb(81, 61, 51);
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.formas-de-pagamento-title, .meio-de-envio-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.formas-de-pagamento-content p, .meio-de-envio-content p {
+    font-size: 12px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.formas-de-pagamento-content, .meio-de-envio-content {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+}
+.formas-de-pagamento.open .formas-de-pagamento-content, 
+.meio-de-envio.open .meio-de-envio-content {
+    display: block;
+    max-height: 100px; /* Ajuste conforme necessário */
+}
+@keyframes slideDown {
+    from { max-height: 0; }
+    to { max-height: 100px; /* Ajuste conforme necessário */ }
+}
+.formas-de-pagamento.open .formas-de-pagamento-content,
+.meio-de-envio.open .meio-de-envio-content {
+    animation: slideDown 0.5s ease-out;
+}
+.descrica-produto {
+    width: 32.1vw;
+    height: auto;
+}
+.descrica-produto p {
+    font-size: 13px;
+    color: var(--colorHover);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.comprar-button {
+    cursor: pointer;
+    margin: 5px;
+    width: 20vw;
+    height: 40px;
+    background-color: var(--colorPrin);
+    color: white;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 1s;
+}
+.comprar-button:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    background-color: var(--colorHover);
 }

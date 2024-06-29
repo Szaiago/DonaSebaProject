@@ -56,7 +56,7 @@
                 <div class="dropdown-ajuda">
                     <ion-icon name="help-outline" class="icone-ajuda"></ion-icon>
                     <div class="dropdown-content-ajuda">
-                        <a href="#">Este site é apenas para demonstração de catálago, pedidos devem ser feitos via whatsapp.</a>
+                        <a href="#">Este site é apenas para demonstração de catálogo, pedidos devem ser feitos via whatsapp.</a>
                     </div>
                 </div>
                 <ion-icon name="logo-whatsapp" class="icone-whats"></ion-icon>
@@ -81,6 +81,32 @@
                             <p1>R$64.99</p1>
                         </div>
                     </div>
+                    <div class="formas-de-pagamento" onclick="toggleSection(event)">
+                        <div class="formas-de-pagamento-title">
+                            <span>Formas de Pagamento</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="formas-de-pagamento-content">
+                            <p>Cartão de débito e PIX</p>
+                        </div>
+                    </div>
+                    <div class="meio-de-envio" onclick="toggleSection(event)">
+                        <div class="meio-de-envio-title">
+                            <span>Meio de Envio</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="meio-de-envio-content">
+                            <p>Retirada no local</p>
+                            <p>Entrega a combinar preço</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="descrica-produto">
+                    <p>Os beijinhos são feitos com leite condensado e coco ralado, proporcionando uma textura macia e um sabor irresistível. Já os brigadeiros são preparados com chocolate belga, oferecendo uma experiência cremosa e intensa. Ambos os docinhos são enrolados com perfeição, garantindo uma apresentação impecável.</p>
+                    <p>Ideal para festas, aniversários, casamentos e qualquer celebração, este combo traz a combinação clássica e amada dos docinhos brasileiros. Feitos com ingredientes de alta qualidade e frescor garantido, nossos beijinhos e brigadeiros são a escolha certa para tornar seu evento ainda mais especial.</p>
+                </div>
+                <div class="button-comprar">
+                    <input type="submit" value="COMPRAR" class="comprar-button">
                 </div>
             </div>
         </div>
@@ -103,5 +129,11 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleSection(event) {
+            const section = event.currentTarget;
+            section.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>

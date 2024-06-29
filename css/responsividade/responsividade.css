@@ -103,6 +103,43 @@
         font-size: 100%;
         margin: 5px;
     }
+    .container-apresentacao-produto {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 90vw;
+        flex-direction: column;
+    }
+    .info-principal {
+        width: 90vw;
+        height: auto;
+        min-height: 65vh;
+    }
+    .detalhes-produto {
+        width: 90vw;
+        min-height: 50vh;
+        height: auto;
+    }
+    .foto-produto {
+        width: 90vw;
+        height: auto;
+        min-height: 65vh;
+    }
+    .titulo-produto {
+        width: 83vw;
+    }
+    .preco-produto {
+        width: 83vw;
+    }
+    .formas-de-pagamento, .meio-de-envio {
+        width: 79vw;
+    }
+    .descrica-produto {
+        width: 82vw;
+    }
+    .comprar-button {
+        width: 80vw;
+    }
   }
   
   @media only screen and (min-width: 601px) and (max-width: 1024px) {
