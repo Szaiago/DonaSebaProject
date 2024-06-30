@@ -113,7 +113,7 @@
     .info-principal {
         width: 90vw;
         height: auto;
-        min-height: 65vh;
+        min-height: 45vh;
     }
     .detalhes-produto {
         width: 90vw;
@@ -123,7 +123,7 @@
     .foto-produto {
         width: 90vw;
         height: auto;
-        min-height: 65vh;
+        min-height: 45vh;
     }
     .titulo-produto {
         width: 83vw;
