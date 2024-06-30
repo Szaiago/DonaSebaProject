@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Docinhos</title>
+    <title>Combo Beijinho e Brigadeiro</title>
     <meta charset="utf-8">
     <meta name="author" content="Iago Souza">
     <meta name="publisher" content="Iago Souza" />
@@ -9,12 +9,15 @@
     <meta name="description" content="Confeiteira de Santa Catarina">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/fixos/fixos.css"/>
-    <link rel="stylesheet" href="../css/fixos/pesquisa.css">
+    <link rel="stylesheet" href="../css/fixos/apresentacao-produtos.css">
     <link rel="stylesheet" href="../css/home/home.css">
     <link rel="stylesheet" href="../css/responsividade/responsividade.css"/>
     <link rel="shortcut icon" type="image/png" href="../css/img-empresa/logo.png"/>
     <script src="../js/dropdown.js" defer></script>
     <script src="../js/hoverfooter.js" defer></script>
+    <script src="../js/dropdown-info.js" defer></script>
+    <script src="../js/redirecionamento-pedido-whats.js" defer></script>
+    <script src="../js/verpreço.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
@@ -56,7 +59,7 @@
                 <div class="dropdown-ajuda">
                     <ion-icon name="help-outline" class="icone-ajuda"></ion-icon>
                     <div class="dropdown-content-ajuda">
-                        <a href="#">Este site é apenas para demonstração de catálago, pedidos devem ser feitos via whatsapp.</a>
+                        <a href="#">Este site é apenas para demonstração de catálogo, pedidos devem ser feitos via whatsapp.</a>
                     </div>
                 </div>
                 <ion-icon name="logo-whatsapp" class="icone-whats"></ion-icon>
@@ -68,25 +71,59 @@
             <a href="bolos.html"><button class="categorias-produtos-bolos-sub-menu">BOLOS</button></a>
         </div>
     </header>
-<main>
-    <div class="titulo-pesquisa">
-        <p>DOCINHOS:</p>
-    </div>
+    <main>
+        <div class="container-apresentacao-produto">
+            <div class="info-principal">
+                <div class="foto-produto" style="background-image: url('../css/img-produtos/doces-confete.png'); background-position: center; background-size: cover;"></div>
+            </div>
+            <div class="detalhes-produto">
+                <div class="titulo-produto">
+                    <p id="nome-pedido">BRIGADEIRO CONFETE</p>
+                    <div class="preco-produto">
+                        <div class="alinhar-preco">
+                            <p id="price">R$64.99</p>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="toggle-units" onchange="togglePrice()">
+                            <label for="toggle-units" id="toggle-label">VER 50 UN</label>
+                        </div>
+                    </div>
+                    <div class="formas-de-pagamento" onclick="toggleSection(event)">
+                        <div class="formas-de-pagamento-title">
+                            <span>Formas de Pagamento</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="formas-de-pagamento-content">
+                            <p>Cartão de débito e PIX</p>
+                        </div>
+                    </div>
+                    <div class="meio-de-envio" onclick="toggleSection(event)">
+                        <div class="meio-de-envio-title">
+                            <span>Meio de Envio</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="meio-de-envio-content">
+                            <p>Retirada no local</p>
+                            <p>Entrega a combinar preço</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="descrica-produto">
+                    <p>Os beijinhos são feitos com leite condensado e coco ralado, proporcionando uma textura macia e um sabor irresistível. Já os brigadeiros são preparados com chocolate belga, oferecendo uma experiência cremosa e intensa. Ambos os docinhos são enrolados com perfeição, garantindo uma apresentação impecável.</p>
+                    <p>Ideal para festas, aniversários, casamentos e qualquer celebração, este combo traz a combinação clássica e amada dos docinhos brasileiros. Feitos com ingredientes de alta qualidade e frescor garantido, nossos beijinhos e brigadeiros são a escolha certa para tornar seu evento ainda mais especial.</p>
+                </div>
+                <div class="button-comprar">
+                    <input type="button" value="COMPRAR" class="comprar-button" onclick="redirectToWhatsApp()">
+                </div>
+            </div>
+        </div>
         <div class="produtos-container">
-            <div class="card-produtos" id="docinhos">
+                        <div class="card-produtos" id="docinhos">
                 <div class="img-produto" style="background-image: url(../css/img-produtos/combo-beijinho-brigadeiro.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
                 <div class="info-produto">
                     <h1>COMBO BEIJINHO E BRIGADEIRO</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="../paginas/combo-beijinho-brigadeiro.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
-                </div>
-            </div>
-            <div class="card-produtos" id="docinhos">
-                <div class="img-produto" style="background-image: url(../css/img-produtos/doces-confete.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                <div class="info-produto">
-                    <h1>BRIGADEIRO CONFETE</h1>
-                    <p>Veja mais sobre este produto em:</p>
-                    <a href="brigadeiro-confete.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="paginas/combo-beijinho-brigadeiro.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
             <div class="card-produtos" id="docinhos">
@@ -94,7 +131,7 @@
                 <div class="info-produto">
                     <h1>BRIGADEIRO FERREIRO</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="brigadeiro-ferreiro.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
             <div class="card-produtos" id="docinhos">
@@ -102,7 +139,7 @@
                 <div class="info-produto">
                     <h1>BRIGADEIRO CHURROS</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="brigadeiro-churros.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
             <div class="card-produtos" id="docinhos">
@@ -110,7 +147,7 @@
                 <div class="info-produto">
                     <h1>BRIGADEIRO KITKAT</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="brigadeiro-kitkat.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
             <div class="card-produtos" id="docinhos">
@@ -118,7 +155,7 @@
                 <div class="info-produto">
                     <h1>BRIGADEIRO LEITE NINHO</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="brigadeiro-leite-ninho.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
             <div class="card-produtos" id="docinhos">
@@ -126,7 +163,7 @@
                 <div class="info-produto">
                     <h1>BEIJINHO</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="beijinho.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
             <div class="card-produtos" id="docinhos">
@@ -134,7 +171,7 @@
                 <div class="info-produto">
                     <h1>BRIGADEIRO KINDER BUENO</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="brigadeiro-kinder-bueno.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="#"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
         </div>
