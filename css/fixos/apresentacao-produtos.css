@@ -65,7 +65,7 @@ main {
 .preco-produto {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     width: 32vw;
     border-bottom: 1px solid var(--colorPrin);
 }
@@ -88,6 +88,40 @@ main {
     flex-direction: row;
     align-items: center;
     text-align: left;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-container label {
+    margin-top: -15px;
+    background-color: rgb(81, 61, 51);
+    color: white;
+    padding: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    transition: 1s;
+}
+.checkbox-container label:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    background-color: var(--colorHover);
+}
+
+.checkbox-container input[type="checkbox"]:checked + label {
+    background-color: white;
+    color: rgb(81, 61, 51);
+}
+.checkbox-container input[type="checkbox"]:checked + label:hover {
+    background-color: rgb(219, 219, 219);
+    color: rgb(81, 61, 51);
 }
 .formas-de-pagamento, .meio-de-envio {
     margin-top: 10px;

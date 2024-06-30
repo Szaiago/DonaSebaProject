@@ -17,6 +17,7 @@
     <script src="../js/hoverfooter.js" defer></script>
     <script src="../js/dropdown-info.js" defer></script>
     <script src="../js/redirecionamento-pedido-whats.js" defer></script>
+    <script src="../js/verpreço.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
@@ -80,7 +81,11 @@
                     <p id="nome-pedido">COMBO BEIJINHO E BRIGADEIRO</p>
                     <div class="preco-produto">
                         <div class="alinhar-preco">
-                            <p1>R$64.99</p1>
+                            <p id="price">R$64.99</p>
+                        </div>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="toggle-units" onchange="togglePrice()">
+                            <label for="toggle-units" id="toggle-label">VER 50 UN</label>
                         </div>
                     </div>
                     <div class="formas-de-pagamento" onclick="toggleSection(event)">
