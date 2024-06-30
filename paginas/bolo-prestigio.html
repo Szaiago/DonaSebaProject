@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Bolos</title>
+    <title>Combo Beijinho e Brigadeiro</title>
     <meta charset="utf-8">
     <meta name="author" content="Iago Souza">
     <meta name="publisher" content="Iago Souza" />
@@ -9,12 +9,15 @@
     <meta name="description" content="Confeiteira de Santa Catarina">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/fixos/fixos.css"/>
-    <link rel="stylesheet" href="../css/fixos/pesquisa.css">
+    <link rel="stylesheet" href="../css/fixos/apresentacao-produtos.css">
     <link rel="stylesheet" href="../css/home/home.css">
     <link rel="stylesheet" href="../css/responsividade/responsividade.css"/>
     <link rel="shortcut icon" type="image/png" href="../css/img-empresa/logo.png"/>
     <script src="../js/dropdown.js" defer></script>
     <script src="../js/hoverfooter.js" defer></script>
+    <script src="../js/dropdown-info.js" defer></script>
+    <script src="../js/redirecionamento-pedido-whats.js" defer></script>
+    <script src="../js/verpreço.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
@@ -56,7 +59,7 @@
                 <div class="dropdown-ajuda">
                     <ion-icon name="help-outline" class="icone-ajuda"></ion-icon>
                     <div class="dropdown-content-ajuda">
-                        <a href="#">Este site é apenas para demonstração de catálago, pedidos devem ser feitos via whatsapp.</a>
+                        <a href="#">Este site é apenas para demonstração de catálogo, pedidos devem ser feitos via whatsapp.</a>
                     </div>
                 </div>
                 <ion-icon name="logo-whatsapp" class="icone-whats"></ion-icon>
@@ -69,8 +72,46 @@
         </div>
     </header>
     <main>
-        <div class="titulo-pesquisa">
-            <p>BOLOS:</p>
+        <div class="container-apresentacao-produto">
+            <div class="info-principal">
+                <div class="foto-produto" style="background-image: url('../css/img-produtos/bolo-prestigio.png'); background-position: center; background-size: cover;"></div>
+            </div>
+            <div class="detalhes-produto">
+                <div class="titulo-produto">
+                    <p id="nome-pedido">BOLO PRESTÍGIO</p>
+                    <div class="preco-produto">
+                        <div class="alinhar-preco">
+                            <p id="price">R$59.99KG</p>
+                        </div>
+                    </div>
+                    <div class="formas-de-pagamento" onclick="toggleSection(event)">
+                        <div class="formas-de-pagamento-title">
+                            <span>Formas de Pagamento</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="formas-de-pagamento-content">
+                            <p>Cartão de débito e PIX</p>
+                        </div>
+                    </div>
+                    <div class="meio-de-envio" onclick="toggleSection(event)">
+                        <div class="meio-de-envio-title">
+                            <span>Meio de Envio</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="meio-de-envio-content">
+                            <p>Retirada no local</p>
+                            <p>Entrega a combinar preço</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="descrica-produto">
+                    <p>O bolo de prestígio é uma verdadeira tentação. Feito com uma massa fofa de chocolate e recheado generosamente com um creme de coco cremoso, cada pedaço é uma explosão de sabores. Coberto com uma camada fina de chocolate ao leite e coco ralado, proporciona uma experiência única e indulgente a cada garfada.</p>
+                    <p>Perfeito para qualquer ocasião especial, seja festas de aniversário, celebrações de casamento ou simplesmente para adoçar o dia, nosso bolo de prestígio é especialmente apreciado pelos amantes de chocolate e coco. Feito com ingredientes selecionados e frescos, garantimos que cada fatia seja não apenas deliciosa, mas também uma experiência memorável para todos os presentes.</p>
+                </div>
+                <div class="button-comprar">
+                    <input type="button" value="COMPRAR" class="comprar-button" onclick="redirectToWhatsApp()">
+                </div>
+            </div>
         </div>
         <div class="produtos-container">
             <div class="card-produtos" id="bolos">
@@ -79,14 +120,6 @@
                     <h1>BOLO DOIS AMORES</h1>
                     <p>Veja mais sobre este produto em:</p>
                     <a href="bolo-dois-amores.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
-                </div>
-            </div>
-            <div class="card-produtos" id="bolos">
-                <div class="img-produto" style="background-image: url(../css/img-produtos/bolo-prestigio.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                <div class="info-produto">
-                    <h1>BOLO PRESTÍGIO</h1>
-                    <p>Veja mais sobre este produto em:</p>
-                    <a href="bolo-prestigio.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
         </div>

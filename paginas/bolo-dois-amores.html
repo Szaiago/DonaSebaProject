@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Bolos</title>
+    <title>Combo Beijinho e Brigadeiro</title>
     <meta charset="utf-8">
     <meta name="author" content="Iago Souza">
     <meta name="publisher" content="Iago Souza" />
@@ -9,12 +9,15 @@
     <meta name="description" content="Confeiteira de Santa Catarina">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/fixos/fixos.css"/>
-    <link rel="stylesheet" href="../css/fixos/pesquisa.css">
+    <link rel="stylesheet" href="../css/fixos/apresentacao-produtos.css">
     <link rel="stylesheet" href="../css/home/home.css">
     <link rel="stylesheet" href="../css/responsividade/responsividade.css"/>
     <link rel="shortcut icon" type="image/png" href="../css/img-empresa/logo.png"/>
     <script src="../js/dropdown.js" defer></script>
     <script src="../js/hoverfooter.js" defer></script>
+    <script src="../js/dropdown-info.js" defer></script>
+    <script src="../js/redirecionamento-pedido-whats.js" defer></script>
+    <script src="../js/verpreço.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
@@ -56,7 +59,7 @@
                 <div class="dropdown-ajuda">
                     <ion-icon name="help-outline" class="icone-ajuda"></ion-icon>
                     <div class="dropdown-content-ajuda">
-                        <a href="#">Este site é apenas para demonstração de catálago, pedidos devem ser feitos via whatsapp.</a>
+                        <a href="#">Este site é apenas para demonstração de catálogo, pedidos devem ser feitos via whatsapp.</a>
                     </div>
                 </div>
                 <ion-icon name="logo-whatsapp" class="icone-whats"></ion-icon>
@@ -69,18 +72,48 @@
         </div>
     </header>
     <main>
-        <div class="titulo-pesquisa">
-            <p>BOLOS:</p>
-        </div>
-        <div class="produtos-container">
-            <div class="card-produtos" id="bolos">
-                <div class="img-produto" style="background-image: url(../css/img-produtos/bolo-dois-amores.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                <div class="info-produto">
-                    <h1>BOLO DOIS AMORES</h1>
-                    <p>Veja mais sobre este produto em:</p>
-                    <a href="bolo-dois-amores.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+        <div class="container-apresentacao-produto">
+            <div class="info-principal">
+                <div class="foto-produto" style="background-image: url('../css/img-produtos/bolo-dois-amores.png'); background-position: center; background-size: cover;"></div>
+            </div>
+            <div class="detalhes-produto">
+                <div class="titulo-produto">
+                    <p id="nome-pedido">BOLO DOIS AMORES</p>
+                    <div class="preco-produto">
+                        <div class="alinhar-preco">
+                            <p id="price">R$54.99KG</p>
+                        </div>
+                    </div>
+                    <div class="formas-de-pagamento" onclick="toggleSection(event)">
+                        <div class="formas-de-pagamento-title">
+                            <span>Formas de Pagamento</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="formas-de-pagamento-content">
+                            <p>Cartão de débito e PIX</p>
+                        </div>
+                    </div>
+                    <div class="meio-de-envio" onclick="toggleSection(event)">
+                        <div class="meio-de-envio-title">
+                            <span>Meio de Envio</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="meio-de-envio-content">
+                            <p>Retirada no local</p>
+                            <p>Entrega a combinar preço</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="descrica-produto">
+                    <p>O bolo Dois Amores é uma verdadeira delícia. Feito com duas camadas de massa macia e úmida, uma de chocolate e outra de baunilha, ele é recheado com dois tipos de recheio: brigadeiro de chocolate cremoso e um delicioso creme de leite condensado com coco ralado.</p>
+                    <p>Cada fatia deste bolo é uma combinação perfeita de sabores, oferecendo uma experiência única para quem aprecia a harmonia entre o chocolate e a baunilha. Decorado com uma cobertura de ganache de chocolate e detalhes de coco ralado, este bolo é não apenas visualmente encantador, mas também irresistivelmente saboroso.</p>
+                </div>
+                <div class="button-comprar">
+                    <input type="button" value="COMPRAR" class="comprar-button" onclick="redirectToWhatsApp()">
                 </div>
             </div>
+        </div>
+        <div class="produtos-container">
             <div class="card-produtos" id="bolos">
                 <div class="img-produto" style="background-image: url(../css/img-produtos/bolo-prestigio.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
                 <div class="info-produto">
