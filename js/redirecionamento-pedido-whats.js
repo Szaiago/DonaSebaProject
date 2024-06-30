@@ -5,8 +5,9 @@ function toggleSection(event) {
 
 function redirectToWhatsApp() {
     const nomeProduto = document.getElementById('nome-pedido').textContent;
-    const mensagem = `Olá, gostaria de saber mais sobre o ${nomeProduto}`;
-    const numeroTelefone = '47991587771';
+    const precoProduto = document.getElementById('price').textContent;
+    const mensagem = `Olá, gostaria de saber mais sobre o ${nomeProduto} que está com preço de ${precoProduto}`;
+    const numeroTelefone = '4998087342';
     const url = `https://wa.me/55${numeroTelefone}?text=${encodeURIComponent(mensagem)}`;
     window.location.href = url;
 }
