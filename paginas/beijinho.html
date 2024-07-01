@@ -17,8 +17,10 @@
     <script src="../js/hoverfooter.js" defer></script>
     <script src="../js/dropdown-info.js" defer></script>
     <script src="../js/redirecionamento-pedido-whats.js" defer></script>
+    <script src="../js/modal-compra.js" defer></script>
     <script src="../js/verpreço.js" defer></script>
     <script src="../js/ajuda.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
@@ -122,7 +124,41 @@
                     <p>Ideal para festas, aniversários, casamentos e qualquer celebração, esses beijinhos são um clássico da doçaria brasileira, perfeitos para quem aprecia uma sobremesa leve e saborosa. Feitos com ingredientes de alta qualidade e carinho artesanal, nossos beijinhos são a escolha certa para adoçar momentos especiais com muita ternura e sabor.</p>
                 </div>
                 <div class="button-comprar">
-                    <input type="button" value="COMPRAR" class="comprar-button" onclick="redirectToWhatsApp()">
+                    <input type="button" value="COMPRAR" class="comprar-button" onclick="abrirModal()">
+                </div>
+                <div id="seu-modal-id" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="fecharModal()">&times;</span>
+                        <div class="modal-formulario">
+                            <div class="formulario-perguntas">
+                                <p>NOME COMPLETO:</p>
+                                <input type="text" placeholder="Nome" id="Nome-Cliente" class="botao-formulario" required>
+                            </div>
+                            <div class="formulario-perguntas">
+                                <p>CEP:</p>
+                                <input type="text" placeholder="CEP" id="CEP" class="botao-formulario">
+                            </div>
+                            <div class="formulario-perguntas">
+                                <span id="Cidade-span" style="display: none;"></span>
+                                <span id="Bairro-span" style="display: none;"></span>
+                                <span id="Rua-span" style="display: none;"></span>
+                            </div>
+                            <div class="formulario-perguntas">
+                                <p>DATA DE ENTREGA:</p>
+                                <input type="date" placeholder="Data de Entrega" id="Data-Entrega" class="botao-formulario" required>
+                            </div>
+                            <div class="formulario-perguntas">
+                                <p>INFORMAÇÕES ADICIONAIS:</p>
+                                <input type="text" placeholder="Informações Adicionais" id="Info-Adicionais" class="botao-formulario">
+                            </div>
+                            <div class="formulario-perguntas">
+                                <input type="submit" value="COMPRAR" id="Finalizar-compra" class="finalizar-formulario">
+                            </div>
+                            <div id="error-container" class="error-container">
+                                <span>TERMINE DE INSERIR OS DADOS</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
