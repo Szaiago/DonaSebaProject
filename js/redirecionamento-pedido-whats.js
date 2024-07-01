@@ -10,26 +10,25 @@ function enviarWhatsApp() {
     const rua = document.getElementById('Rua-span').textContent.trim();
     const errorContainer = document.getElementById('error-container');
 
-    if (!nomeCliente || !cep || !dataEntrega || !cidade || !bairro || !rua || !nomePedido || !price) {
+    if (!nomeCliente || !dataEntrega || !cidade || !nomePedido || !price) {
         errorContainer.style.display = 'block';
         document.getElementById('Nome-Cliente-span').textContent = !nomeCliente ? 'Nome do Cliente é obrigatório.' : '';
-        document.getElementById('CEP-span').textContent = !cep ? 'CEP é obrigatório.' : '';
         document.getElementById('Data-Entrega-span').textContent = !dataEntrega ? 'Data de Entrega é obrigatória.' : '';
         document.getElementById('Cidade-span').textContent = !cidade ? 'Cidade é obrigatória.' : '';
-        document.getElementById('Bairro-span').textContent = !bairro ? 'Bairro é obrigatório.' : '';
-        document.getElementById('Rua-span').textContent = !rua ? 'Rua é obrigatória.' : '';
-        document.getElementById('Info-Adicionais-span').textContent = !infoAdicionais ? 'Informações Adicionais são obrigatórias.' : '';
         document.getElementById('nome-pedido-span').textContent = !nomePedido ? 'Nome do Pedido é obrigatório.' : '';
         document.getElementById('price-span').textContent = !price ? 'Preço é obrigatório.' : '';
         return;
     }
 
+    // Abre o modal antes de enviar o WhatsApp
+    abrirModal();
+
     const mensagem = `Olá, gostaria de fazer um pedido:\n\n` +
         `Nome do Cliente: ${nomeCliente}\n` +
-        `CEP: ${cep}\n` +
+        (cep ? `CEP: ${cep}\n` : '') +
         `Cidade: ${cidade}\n` +
-        `Bairro: ${bairro}\n` +
-        `Rua: ${rua}\n` +
+        (bairro ? `Bairro: ${bairro}\n` : 'Bairro: Preencha Manualmente\n') +
+        (rua ? `Rua: ${rua}\n` : 'Rua: Preencha Manualmente\n') +
         `Data de Entrega: ${dataEntrega}\n` +
         `Informações Adicionais: ${infoAdicionais}\n` +
         `Nome do Pedido: ${nomePedido}\n` +
@@ -38,7 +37,13 @@ function enviarWhatsApp() {
     const numeroWhatsApp = '47991587771';
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
-    window.open(urlWhatsApp, '_blank');
+    // Simula o envio para o WhatsApp (window.open) - substitua pela sua lógica real
+    setTimeout(function() {
+        // Fecha o modal após enviar a mensagem (simulação)
+        fecharModal();
+        // Abre o link para o WhatsApp
+        window.open(urlWhatsApp, '_blank');
+    }, 1000); // Apenas para simulação, ajuste conforme necessário
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,27 +65,25 @@ function fecharErro() {
 
 $(document).ready(function(){
     $('#CEP').on('blur', function(){
-        var cep = $(this).val().replace(/\D/g, '');
-        if(cep != ""){
-            var validacep = /^[0-9]{8}$/;
-            if(validacep.test(cep)){
-                $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados){
-                    if(!("erro" in dados)){
-                        $('#Rua').val(dados.logradouro);
-                        $('#Bairro').val(dados.bairro);
+        const cep = $(this).val().replace(/\D/g, '');
+        if (cep !== "") {
+            const validacep = /^[0-9]{8}$/;
+            if (validacep.test(cep)) {
+                $.getJSON(`https://viacep.com.br/ws/${cep}/json/?callback=?`, function(dados){
+                    if (!("erro" in dados)) {
                         $('#Cidade').val(dados.localidade);
-                        $('#Rua-span').text(dados.logradouro);
-                        $('#Bairro-span').text(dados.bairro);
                         $('#Cidade-span').text(dados.localidade);
-                    }else{
+                        $('#Bairro').val(dados.bairro || '');
+                        $('#Rua').val(dados.logradouro || '');
+                        $('#Bairro-span').text(dados.bairro || '');
+                        $('#Rua-span').text(dados.logradouro || '');
+                    } else {
                         alert("CEP não encontrado.");
                     }
                 });
-            }else{
+            } else {
                 alert("Formato de CEP inválido.");
             }
-        }else{
-            alert("CEP não pode ser vazio.");
         }
     });
 });
