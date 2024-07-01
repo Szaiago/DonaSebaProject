@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Combo Beijinho e Brigadeiro</title>
+    <title>Coxinha Dona Seba</title>
     <meta charset="utf-8">
     <meta name="author" content="Iago Souza">
     <meta name="publisher" content="Iago Souza" />
@@ -17,8 +17,10 @@
     <script src="../js/hoverfooter.js" defer></script>
     <script src="../js/dropdown-info.js" defer></script>
     <script src="../js/redirecionamento-pedido-whats.js" defer></script>
+    <script src="../js/modal-compra.js" defer></script>
     <script src="../js/verpreçosalgados.js" defer></script>
     <script src="../js/ajuda.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
@@ -122,17 +124,99 @@
                     <p>Versátil e saboroso, o pastelzinho é um petisco apreciado em todo o país, encontrado em feiras, bares, lanchonetes e até mesmo como uma opção em eventos sociais e festas. Ele não só satisfaz o paladar com suas diferentes combinações de sabores, mas também proporciona uma experiência gastronômica simples e deliciosa que agrada a todos os gostos.</p>
                 </div>
                 <div class="button-comprar">
-                    <input type="button" value="COMPRAR" class="comprar-button" onclick="redirectToWhatsApp()">
+                    <input type="button" value="COMPRAR" class="comprar-button" onclick="abrirModal()">
+                </div>
+                <div id="seu-modal-id" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button" onclick="fecharModal()">&times;</span>
+                        <div class="modal-formulario">
+                            <div class="formulario-perguntas">
+                                <p>NOME COMPLETO:</p>
+                                <input type="text" placeholder="Nome" id="Nome-Cliente" class="botao-formulario" required>
+                            </div>
+                            <div class="formulario-perguntas">
+                                <p>CEP:</p>
+                                <input type="text" placeholder="CEP" id="CEP" class="botao-formulario">
+                            </div>
+                            <div class="formulario-perguntas">
+                                <span id="Cidade-span" style="display: none;"></span>
+                                <span id="Bairro-span" style="display: none;"></span>
+                                <span id="Rua-span" style="display: none;"></span>
+                            </div>
+                            <div class="formulario-perguntas">
+                                <p>DATA DE ENTREGA:</p>
+                                <input type="date" placeholder="Data de Entrega" id="Data-Entrega" class="botao-formulario" required>
+                            </div>
+                            <div class="formulario-perguntas">
+                                <p>INFORMAÇÕES ADICIONAIS:</p>
+                                <input type="text" placeholder="Informações Adicionais" id="Info-Adicionais" class="botao-formulario">
+                            </div>
+                            <div class="formulario-perguntas">
+                                <input type="submit" value="COMPRAR" id="Finalizar-compra" class="finalizar-formulario">
+                            </div>
+                            <div id="error-container" class="error-container">
+                                <span>TERMINE DE INSERIR OS DADOS</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="produtos-container">
-            <div class="card-produtos">
-                <div class="img-produto" style="background-image: url(../css/img-produtos/coxinha.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/combo-beijinho-brigadeiro.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
                 <div class="info-produto">
-                    <h1>COXINHA</h1>
+                    <h1>COMBO BEIJINHO E BRIGADEIRO</h1>
                     <p>Veja mais sobre este produto em:</p>
-                    <a href="coxinha.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                    <a href="combo-beijinho-brigadeiro.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/doces-confete.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO CONFETE</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="brigadeiro-confete.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-ferreiro.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO FERREIRO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="brigadeiro-ferreiro.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-churros.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO CHURROS</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="brigadeiro-churros.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-kitkat.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO KITKAT</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="brigadeiro-kitkat.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-leite-ninho-nutella.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO LEITE NINHO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="brigadeiro-leite-ninho.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
+                </div>
+            </div>
+            <div class="card-produtos" id="docinhos">
+                <div class="img-produto" style="background-image: url(../css/img-produtos/brigadeiro-kinder-bueno.png); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                <div class="info-produto">
+                    <h1>BRIGADEIRO KINDER BUENO</h1>
+                    <p>Veja mais sobre este produto em:</p>
+                    <a href="brigadeiro-kinder-bueno.html"><button type="button" class="ver-mais-produtos">VER MAIS</button></a>
                 </div>
             </div>
         </div>
