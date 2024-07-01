@@ -10,7 +10,6 @@ function enviarWhatsApp() {
     const rua = document.getElementById('Rua-span').textContent.trim();
     const errorContainer = document.getElementById('error-container');
 
-    // Validação dos campos
     if (!nomeCliente || !cep || !dataEntrega || !cidade || !bairro || !rua || !nomePedido || !price) {
         errorContainer.style.display = 'block';
         document.getElementById('Nome-Cliente-span').textContent = !nomeCliente ? 'Nome do Cliente é obrigatório.' : '';
@@ -25,7 +24,6 @@ function enviarWhatsApp() {
         return;
     }
 
-    // Construção da mensagem
     const mensagem = `Olá, gostaria de fazer um pedido:\n\n` +
         `Nome do Cliente: ${nomeCliente}\n` +
         `CEP: ${cep}\n` +
@@ -37,14 +35,10 @@ function enviarWhatsApp() {
         `Nome do Pedido: ${nomePedido}\n` +
         `Preço: ${price}`;
 
-    // Abre a janela do WhatsApp apenas se todos os dados estiverem corretos
     const numeroWhatsApp = '47991587771';
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-    
-    // Verifica se há erros de validação antes de abrir o WhatsApp
-    if (errorContainer.style.display === 'none') {
-        window.open(urlWhatsApp, '_blank');
-    }
+
+    window.open(urlWhatsApp, '_blank');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
