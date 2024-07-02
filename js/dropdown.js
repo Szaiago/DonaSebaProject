@@ -13,8 +13,4 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdownContent.classList.remove('show');
         }
     });
-
-    dropdownContent.addEventListener('click', function(event) {
-        event.stopPropagation(); // Impede que o clique se propague para o window
-    });
 });
