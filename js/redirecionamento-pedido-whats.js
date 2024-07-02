@@ -10,7 +10,6 @@ function enviarWhatsApp() {
     const rua = document.getElementById('Rua-span').textContent.trim();
     const errorContainer = document.getElementById('error-container');
 
-    // Verifica se todos os campos obrigatórios estão preenchidos
     if (!nomeCliente || !dataEntrega || !cidade || !nomePedido || !price) {
         errorContainer.style.display = 'block';
         document.getElementById('Nome-Cliente-span').textContent = !nomeCliente ? 'Nome do Cliente é obrigatório.' : '';
@@ -21,51 +20,38 @@ function enviarWhatsApp() {
         return;
     }
 
-    // Verifica se o CEP foi preenchido e se encontrou informações válidas
-    if (cep && !$("#inputs-manuais").is(":visible")) {
-        const validacep = /^[0-9]{8}$/;
-        if (validacep.test(cep)) {
-            $.getJSON(`https://viacep.com.br/ws/${cep}/json/?callback=?`, function(dados){
-                if (!("erro" in dados)) {
-                    $('#Cidade').val(dados.localidade);
-                    $('#Cidade-span').text(dados.localidade);
-                    $('#Bairro').val(dados.bairro || '');
-                    $('#Rua').val(dados.logradouro || '');
-                    $('#Bairro-span').text(dados.bairro || '');
-                    $('#Rua-span').text(dados.logradouro || '');
-                } else {
-                    exibirInputsManuais();
-                }
-            });
-        }
-    } else {
-        exibirInputsManuais();
-    }
-
-    // Abre o modal antes de enviar o WhatsApp
     abrirModal();
 
-    // Verifica se todos os campos obrigatórios e opcionais estão preenchidos para enviar o WhatsApp
-    if (nomeCliente && dataEntrega && cidade && nomePedido && price && (cep || ($('#Bairro-Manual').val() && $('#Rua-Manual').val()))) {
-        let mensagem = `Olá, gostaria de fazer um pedido:\n\n` +
-            `Nome do Cliente: ${nomeCliente}\n` +
-            (cep ? `CEP: ${cep}\n` : '') +
-            `Cidade: ${cidade}\n` +
-            (bairro ? `Bairro: ${bairro}\n` : ($('#Bairro-Manual').val() ? `Bairro (Manual): ${$('#Bairro-Manual').val()}\n` : 'Bairro: Preencha Manualmente\n')) +
-            (rua ? `Rua: ${rua}\n` : ($('#Rua-Manual').val() ? `Rua (Manual): ${$('#Rua-Manual').val()}\n` : 'Rua: Preencha Manualmente\n')) +
-            `Data de Entrega: ${dataEntrega}\n` +
-            `Informações Adicionais: ${infoAdicionais}\n` +
-            `Nome do Pedido: ${nomePedido}\n` +
-            `Preço: ${price}`;
+    let mensagem = `Olá, gostaria de fazer um pedido:\n\n` +
+        `Nome do Cliente: ${nomeCliente}\n` +
+        (cep ? `CEP: ${cep}\n` : '') +
+        `Cidade: ${cidade}\n`;
 
-        const numeroWhatsApp = '47991587771';
-        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+    if (bairro && rua) {
+        mensagem += `Bairro: ${bairro}\n` +
+                    `Rua: ${rua}\n`;
+    } else {
+        mensagem += 'Bairro: Preencha Manualmente\n' +
+                    'Rua: Preencha Manualmente\n' +
+                    'Alguns CEPs podem variar e acabar não encontrando informações de bairro e rua.\n';
+    }
 
-        // Simula o envio para o WhatsApp (window.open) - substitua pela sua lógica real
+    mensagem += `Data de Entrega: ${dataEntrega}\n` +
+                `Informações Adicionais: ${infoAdicionais}\n` +
+                `Nome do Pedido: ${nomePedido}\n` +
+                `Preço: ${price}`;
+
+    const numeroWhatsApp = '47991587771';
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+    // Verificar se é dispositivo móvel para redirecionar de forma adequada
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        window.location.href = urlWhatsApp; // Redireciona diretamente para o WhatsApp no navegador móvel
+    } else {
+        alert("Para continuar, clique no botão 'OK'!");
         setTimeout(function() {
-            // Fecha o modal após enviar a mensagem (simulação)
             fecharModal();
-            // Abre o link para o WhatsApp
             window.open(urlWhatsApp, '_blank');
         }, 1000); // Apenas para simulação, ajuste conforme necessário
     }
@@ -102,18 +88,13 @@ $(document).ready(function(){
                         $('#Rua').val(dados.logradouro || '');
                         $('#Bairro-span').text(dados.bairro || '');
                         $('#Rua-span').text(dados.logradouro || '');
-                        $('#inputs-manuais').hide(); // Esconde os inputs manuais, se visíveis
                     } else {
-                        exibirInputsManuais();
+                        alert("CEP não encontrado.");
                     }
                 });
-            } 
-        } else {
-            exibirInputsManuais();
+            } else {
+                alert("Formato de CEP inválido.");
+            }
         }
     });
 });
-
-function exibirInputsManuais() {
-    $('#inputs-manuais').show(); // Mostra os inputs manuais
-}
