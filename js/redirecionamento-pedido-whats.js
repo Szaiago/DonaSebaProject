@@ -10,6 +10,7 @@ function enviarWhatsApp() {
     const rua = document.getElementById('Rua-span').textContent.trim();
     const errorContainer = document.getElementById('error-container');
 
+    // Verifica se todos os campos obrigatórios estão preenchidos
     if (!nomeCliente || !dataEntrega || !cidade || !nomePedido || !price) {
         errorContainer.style.display = 'block';
         document.getElementById('Nome-Cliente-span').textContent = !nomeCliente ? 'Nome do Cliente é obrigatório.' : '';
@@ -20,29 +21,56 @@ function enviarWhatsApp() {
         return;
     }
 
+    // Verifica se o CEP foi preenchido e se encontrou informações válidas
+    if (cep && !$("#inputs-manuais").is(":visible")) {
+        const validacep = /^[0-9]{8}$/;
+        if (validacep.test(cep)) {
+            $.getJSON(`https://viacep.com.br/ws/${cep}/json/?callback=?`, function(dados){
+                if (!("erro" in dados)) {
+                    $('#Cidade').val(dados.localidade);
+                    $('#Cidade-span').text(dados.localidade);
+                    $('#Bairro').val(dados.bairro || '');
+                    $('#Rua').val(dados.logradouro || '');
+                    $('#Bairro-span').text(dados.bairro || '');
+                    $('#Rua-span').text(dados.logradouro || '');
+                } else {
+                    exibirInputsManuais();
+                }
+            });
+        } else {
+            alert("Formato de CEP inválido.");
+        }
+    } else {
+        exibirInputsManuais();
+    }
 
+    // Abre o modal antes de enviar o WhatsApp
     abrirModal();
 
-    const mensagem = `Olá, gostaria de fazer um pedido:\n\n` +
-        `Nome do Cliente: ${nomeCliente}\n` +
-        (cep ? `CEP: ${cep}\n` : '') +
-        `Cidade: ${cidade}\n` +
-        (bairro ? `Bairro: ${bairro}\n` : 'Bairro: Preencha Manualmente\n') +
-        (rua ? `Rua: ${rua}\n` : 'Rua: Preencha Manualmente\n') +
-        `Data de Entrega: ${dataEntrega}\n` +
-        `Informações Adicionais: ${infoAdicionais}\n` +
-        `Nome do Pedido: ${nomePedido}\n` +
-        `Preço: ${price}`;
+    // Verifica se todos os campos obrigatórios e opcionais estão preenchidos para enviar o WhatsApp
+    if (nomeCliente && dataEntrega && cidade && nomePedido && price && (cep || ($('#Bairro-Manual').val() && $('#Rua-Manual').val()))) {
+        let mensagem = `Olá, gostaria de fazer um pedido:\n\n` +
+            `Nome do Cliente: ${nomeCliente}\n` +
+            (cep ? `CEP: ${cep}\n` : '') +
+            `Cidade: ${cidade}\n` +
+            (bairro ? `Bairro: ${bairro}\n` : ($('#Bairro-Manual').val() ? `Bairro (Manual): ${$('#Bairro-Manual').val()}\n` : 'Bairro: Preencha Manualmente\n')) +
+            (rua ? `Rua: ${rua}\n` : ($('#Rua-Manual').val() ? `Rua (Manual): ${$('#Rua-Manual').val()}\n` : 'Rua: Preencha Manualmente\n')) +
+            `Data de Entrega: ${dataEntrega}\n` +
+            `Informações Adicionais: ${infoAdicionais}\n` +
+            `Nome do Pedido: ${nomePedido}\n` +
+            `Preço: ${price}`;
 
-    const numeroWhatsApp = '47991587771';
-    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+        const numeroWhatsApp = '47991587771';
+        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
-    setTimeout(function() {
-
-        fecharModal();
-
-        window.open(urlWhatsApp, '_blank');
-    }, 1000); 
+        // Simula o envio para o WhatsApp (window.open) - substitua pela sua lógica real
+        setTimeout(function() {
+            // Fecha o modal após enviar a mensagem (simulação)
+            fecharModal();
+            // Abre o link para o WhatsApp
+            window.open(urlWhatsApp, '_blank');
+        }, 1000); // Apenas para simulação, ajuste conforme necessário
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -76,13 +104,20 @@ $(document).ready(function(){
                         $('#Rua').val(dados.logradouro || '');
                         $('#Bairro-span').text(dados.bairro || '');
                         $('#Rua-span').text(dados.logradouro || '');
+                        $('#inputs-manuais').hide(); // Esconde os inputs manuais, se visíveis
                     } else {
-                        alert("CEP não encontrado.");
+                        exibirInputsManuais();
                     }
                 });
             } else {
                 alert("Formato de CEP inválido.");
             }
+        } else {
+            exibirInputsManuais();
         }
     });
 });
+
+function exibirInputsManuais() {
+    $('#inputs-manuais').show(); // Mostra os inputs manuais
+}
