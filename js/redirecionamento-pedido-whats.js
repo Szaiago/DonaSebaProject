@@ -33,7 +33,7 @@ function enviarWhatsApp() {
     } else {
         mensagem += 'Bairro: Preencha Manualmente\n' +
                     'Rua: Preencha Manualmente\n' +
-                    'Alguns CEPs podem variar e acabar não encontrando informações de bairro e rua.\n';
+                    'Alguns CEPs podem variar por serem de cidades menores e acabar não encontrando informações de bairro e rua.\n';
     }
 
     mensagem += `Data de Entrega: ${dataEntrega}\n` +
