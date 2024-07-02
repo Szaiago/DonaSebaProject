@@ -37,8 +37,6 @@ function enviarWhatsApp() {
                     exibirInputsManuais();
                 }
             });
-        } else {
-            alert("Formato de CEP inválido.");
         }
     } else {
         exibirInputsManuais();
@@ -109,9 +107,7 @@ $(document).ready(function(){
                         exibirInputsManuais();
                     }
                 });
-            } else {
-                alert("Formato de CEP inválido.");
-            }
+            } 
         } else {
             exibirInputsManuais();
         }
