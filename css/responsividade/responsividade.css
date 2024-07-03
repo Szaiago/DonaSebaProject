@@ -115,6 +115,15 @@
         height: auto;
         min-height: 45vh;
     }
+    .monte-seu-pedido-container {
+        width: 90vw;
+    }
+    .section-tipo{
+        width: 87.5vw;
+    }
+    .sub-section {
+        width: 87.5vw;
+    }
     .detalhes-produto {
         width: 90vw;
         min-height: 50vh;
