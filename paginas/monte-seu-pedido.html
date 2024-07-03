@@ -16,6 +16,7 @@
     <script src="../js/dropdown.js" defer></script>
     <script src="../js/hoverfooter.js" defer></script>
     <script src="../js/dropdown-info.js" defer></script>
+    <script src="../js/dropdown-montar-pedido.js" defer></script>
     <script src="../js/redirecionar-pedido-montado.js" defer></script>
     <script src="../js/modal-compra.js" defer></script>
     <script src="../js/verpreço.js" defer></script>
@@ -805,6 +806,49 @@
                             </div>
                         </div>
                     </div>
+                    <div class="section-tipo" onclick="toggleSection(event)" id="bolos">
+                        <div class="section-tipo-title">
+                            <span>BOLOS TRADICIONAIS</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="section-tipo-content">
+                            <div class="sub-section" style="background-color: rgb(81, 61, 51); width: 30vw; border-radius:  15px 0 0 0;">
+                                <p style="color: white;">PRODUTO</p>
+                            </div>
+                            <div class="sub-section" style="background-color: rgb(81, 61, 51); width: 20vw;">
+                                <p style="color: white;">KG</p>
+                            </div>
+                            <div class="sub-section" style="border-right: 0px; width: 10vw; background-color: rgb(81, 61, 51); border-radius: 0 15px 0 0;">
+                                <p style="color: white;">PREÇO</p>
+                            </div>
+                        </div>
+                        <div class="section-tipo-content">
+                            <div class="sub-section" style="width: 30vw;">
+                                <p id="nome-produto-5">BOLO DE BRIGADEIRO PRETO</p>
+                            </div>
+                            <div class="sub-section" style="border-right: 0px; width: 10vw; border-right: 1px solid rgb(81, 61, 51);">
+                                <input type="text" id="quantidade-kg-bolo" class="quantidade-kg-bolo">
+                                <input type="submit" id="enviar-kg-bolo"" class="enviar-kg-bolo">
+                            </div>
+                            <div class="sub-section" style="border-right: 0px; width: 10vw;">
+                                <p id="valor-produto-5">R$54.99</p>
+                                <p>KG</p>
+                            </div>
+                        </div>
+                        <div class="section-tipo-content">
+                            <div class="sub-section" style="width: 30vw;">
+                                <p id="nome-produto-5" >BOLO DE BRIGADEIRO BRANCO</p>
+                            </div>
+                            <div class="sub-section" style="border-right: 0px; width: 10vw; border-right: 1px solid rgb(81, 61, 51);">
+                                <input type="text" id="quantidade-kg-bolo" class="quantidade-kg-bolo">
+                                <input type="submit" id="enviar-kg-bolo"" class="enviar-kg-bolo">
+                            </div>
+                            <div class="sub-section" style="border-right: 0px; width: 10vw;">
+                                <p id="valor-produto-5">R$54.99</p>
+                                <p>KG</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="detalhes-produto">
@@ -845,8 +889,7 @@
                     </div>
                 </div>
                 <div class="descrica-produto">
-                    <p>Os beijinhos são feitos com leite condensado, coco ralado e um toque de manteiga, proporcionando uma textura macia e um sabor delicadamente doce. Cada beijinho é cuidadosamente moldado e decorado com coco ralado, garantindo não apenas um visual encantador, mas também uma explosão de sabor tropical a cada mordida.</p>
-                    <p>Ideal para festas, aniversários, casamentos e qualquer celebração, esses beijinhos são um clássico da doçaria brasileira, perfeitos para quem aprecia uma sobremesa leve e saborosa. Feitos com ingredientes de alta qualidade e carinho artesanal, nossos beijinhos são a escolha certa para adoçar momentos especiais com muita ternura e sabor.</p>
+                    <p>Na sessão "Monte Seu Pedido", você tem a liberdade de criar a combinação perfeita para sua festa ou evento. Escolha entre uma variedade deliciosa de docinhos tradicionais, docinhos gourmet, salgadinhos e bolos, todos preparados com ingredientes de alta qualidade e um toque artesanal que faz toda a diferença. Aqui está o que você pode esperar:</p>
                 </div>
                 <div class="button-comprar">
                     <input type="button" value="COMPRAR" class="comprar-button" onclick="abrirModal()">
