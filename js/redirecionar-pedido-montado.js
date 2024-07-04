@@ -25,6 +25,11 @@ function enviarWhatsApp() {
     abrirModal();
 
     let mensagem = `Olá, gostaria de fazer um pedido:\n\n` +
+        `Nome do Pedido: ${nomePedido}\n` +
+        `O que vem: ${oQueVem}\n` +
+        `Data de Entrega: ${dataEntrega}\n` +
+        `Informações Adicionais: ${infoAdicionais}\n` +
+        `Preço Total: ${priceTotal}\n\n` +
         `Nome do Cliente: ${nomeCliente}\n` +
         (cep ? `CEP: ${cep}\n` : '') +
         `Cidade: ${cidade}\n`;
@@ -37,12 +42,6 @@ function enviarWhatsApp() {
                     'Rua: Preencha Manualmente\n' +
                     'Alguns CEPs podem variar e acabar não encontrando informações de bairro e rua.\n';
     }
-
-    mensagem += `Data de Entrega: ${dataEntrega}\n` +
-                `Informações Adicionais: ${infoAdicionais}\n` +
-                `Nome do Pedido: ${nomePedido}\n` +
-                `Preço Total: ${priceTotal}\n` +
-                `O que vem: ${oQueVem}`;
 
     const numeroWhatsApp = '47991587771';
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
