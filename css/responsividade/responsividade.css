@@ -115,8 +115,15 @@
         height: auto;
         min-height: 45vh;
     }
+    .info-principal-monte-seu-pedido {
+        width: 90vw;
+        height: auto;
+        min-height: 25vh;
+    }
     .monte-seu-pedido-container {
         width: 90vw;
+        max-height: 30vh;
+        background-color: brown;
     }
     .section-tipo{
         width: 84.5vw;

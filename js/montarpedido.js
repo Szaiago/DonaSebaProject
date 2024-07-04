@@ -24,6 +24,15 @@ $(document).ready(function() {
         // Calcula o preço total dos produtos selecionados
         const precoTotal = produtosSelecionados.reduce((total, produto) => total + produto.valor, 0).toFixed(2);
         $('#price-total').text(`Total: R$${precoTotal}`);
+
+        // Verifica se a lista de produtos não está vazia e abre o dropdown
+        if (produtosSelecionados.length > 0) {
+            const dropdownToggleElement = $('.dropdown-toggle'); // Ajuste o seletor conforme necessário
+            if (!dropdownToggleElement.hasClass('open')) {
+                dropdownToggleElement.addClass('open');
+                toggleSection({ currentTarget: dropdownToggleElement[0] });
+            }
+        }
     }
 
     // Evento de clique nos checkboxes para adicionar/remover produtos
@@ -44,3 +53,9 @@ $(document).ready(function() {
         atualizarListaProdutos();
     });
 });
+
+// Função para abrir/fechar a seção (dropdown)
+function toggleSection(event) {
+    const section = event.currentTarget;
+    section.classList.toggle('open');
+}
