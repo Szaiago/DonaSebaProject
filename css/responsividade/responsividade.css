@@ -125,13 +125,22 @@
         font-size: 10px;
         width: 15vw; 
     }
+    .sub-section-1 p{
+        font-size: 10px;
+    }
     .sub-section-2 {
         font-size: 10px;
         width: 57.2vw;
     }
+    .sub-section-2 p {
+        font-size: 10px;
+    }
     .sub-section-3 {
         font-size: 10px;
         width: 15vw; 
+    }
+    .sub-section-3 p {
+        font-size: 10px;
     }
     .sub-section-4 {
         width: 15vw;
