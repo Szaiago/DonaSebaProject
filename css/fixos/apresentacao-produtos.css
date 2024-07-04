@@ -81,12 +81,50 @@ main {
 .section-tipo.open .section-tipo-content {
     animation: slideDown 0.5s ease-out;
 }
-.sub-section {
+.sub-section-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.2vw; 
+    background-color: 
+    rgb(81, 61, 51); 
+    border-radius: 15px 0 0 0;
+}
+.sub-section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40.5vw;
+    background-color: rgb(81, 61, 51);
+}
+.sub-section-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 0px; 
+    width: 10vw; 
+    background-color: rgb(81, 61, 51); 
+    border-radius: 0 15px 0 0;
+}
+.sub-section-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7vw;
+    border-right: 1px solid var(--colorPrin);
+}
+.sub-section-5 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 40.5vw;
     border-right: 1px solid var(--colorPrin);
+}
+.sub-section-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
 }
 .sub-section p {
     font-family: Arial, Helvetica, sans-serif;

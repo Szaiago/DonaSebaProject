@@ -119,10 +119,27 @@
         width: 90vw;
     }
     .section-tipo{
-        width: 87.5vw;
+        width: 84.5vw;
     }
-    .sub-section {
-        width: 87.5vw;
+    .sub-section-1 {
+        width: 15vw; 
+    }
+    .sub-section-2 {
+        width: 57.2vw;
+    }
+    .sub-section-3 {
+        width: 15vw; 
+    }
+    .sub-section-4 {
+        width: 15vw;
+        border-right: 1px solid var(--colorPrin);
+    }
+    .sub-section-5 {
+        width: 57vw;
+        border-right: 1px solid var(--colorPrin);
+    }
+    .sub-section-6 {
+        width: 15vw;
     }
     .detalhes-produto {
         width: 90vw;
